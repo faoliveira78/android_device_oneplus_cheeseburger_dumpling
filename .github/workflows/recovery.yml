@@ -1,6 +1,15 @@
 # This workflow script is taken from https://github.com/Area69Lab/Recovery-Builder-NoKernel
 name: Building recovery
 on:
+#  release:
+#    types: [published]
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
   watch:
     types: [started]
 env:
@@ -18,6 +27,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+
     - name: Initializing environment
       run: |
         git config --global user.name "Fernando Oliveira"
@@ -26,6 +36,7 @@ jobs:
         sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison aria2
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
+
     - name: Sync recovery source and device tree
       run: |
         mkdir work
@@ -33,6 +44,7 @@ jobs:
         repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
         repo sync
         git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+ 
     - name: Build
       run: |
         cd work; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_$DEVICE-eng; mka $TARGET
