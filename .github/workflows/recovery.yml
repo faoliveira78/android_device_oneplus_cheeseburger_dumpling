@@ -1,17 +1,19 @@
 # This workflow script is taken from https://github.com/Area69Lab/Recovery-Builder-NoKernel
 name: Building recovery
+
 on:
 #  release:
 #    types: [published]
 #  push:
 #    branches:
-#      - master
+#      - main
 #    paths:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
     types: [started]
+
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   MANIFEST_BRANCH: twrp-11
@@ -23,7 +25,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -41,13 +43,14 @@ jobs:
       run: |
         mkdir work
         cd work
-        repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
+        repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
         repo sync
         git clone $DT_LINK --depth=1 --single-branch $DT_PATH
  
     - name: Build
       run: |
         cd work; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_$DEVICE-eng; mka $TARGET
+
     - name: Upload recovery image
       run: |
         cd work/out/target/product/$DEVICE
