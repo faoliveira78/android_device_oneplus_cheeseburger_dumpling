@@ -18,7 +18,7 @@ on:
 env:
   MANIFEST: git@github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
   DEVICE: cheeseburger_dumpling
-  DT_LINK: https://github.com/faoliveira78/android_device_oneplus_cheeseburger_dumpling -b android11
+  DT_LINK: https://github.com/faoliveira78/android_device_oneplus_cheeseburger_dumpling -b android-11
   DT_PATH: device/oneplus/cheeseburger_dumpling
   CHAT_ID: ${{ secrets.TEST_CHAT_ID }}
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
