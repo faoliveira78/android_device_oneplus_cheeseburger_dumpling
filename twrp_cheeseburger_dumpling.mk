@@ -17,7 +17,7 @@
 # Release name
 PRODUCT_RELEASE_NAME := cheeseburger_dumpling
 
-$(call inherit-product, build/target/product/core_64_bit.mk)
+$(call inherit-product, build/target/product/core_64_bit_only.mk)
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
