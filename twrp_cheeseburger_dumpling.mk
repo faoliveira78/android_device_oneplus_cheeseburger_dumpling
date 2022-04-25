@@ -18,8 +18,7 @@
 PRODUCT_RELEASE_NAME := cheeseburger_dumpling
 
 $(call inherit-product, build/target/product/core_64_bit_only.mk)
-$(call inherit-product, build/target/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, build/target/product/base.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
@@ -29,17 +28,9 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# tzdata
-PRODUCT_PACKAGES += \
-    tzdata_twrp
 
 # Set by init module based on ro.boot.rf_version argument from bootloader
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.device ro.product.model ro.build.product 
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.keystore=msm8998 \
-    ro.hardware.gatekeeper=msm8998 \
-    ro.vendor.build.security_patch=2127-12-31
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cheeseburger_dumpling
