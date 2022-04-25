@@ -18,7 +18,7 @@
 PRODUCT_RELEASE_NAME := cheeseburger_dumpling
 
 $(call inherit-product, build/target/product/core_64_bit_only.mk)
-$(call inherit-product, build/target/product/base.mk)
+$(call inherit-product, build/target/product/aosp_base.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
