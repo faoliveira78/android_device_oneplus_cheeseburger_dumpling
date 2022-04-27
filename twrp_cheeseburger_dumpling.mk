@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+# tzdata
+PRODUCT_PACKAGES += \
+    tzdata_twrp
+
 # Set by init module based on ro.boot.rf_version argument from bootloader
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.device ro.product.model ro.build.product 
 
