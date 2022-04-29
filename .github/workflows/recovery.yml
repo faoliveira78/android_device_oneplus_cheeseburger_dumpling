@@ -49,10 +49,10 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST --depth=1 --partial-clone --clone-filter=blob:limit=10M --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             repo init -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -j4
              cd bootable/recovery
-             git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/4 && git cherry-pick FETCH_HEAD
+             git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/5 && git cherry-pick FETCH_HEAD
              cd /home/runner/work/android_device_oneplus_cheeseburger_dumpling/android_device_oneplus_cheeseburger_dumpling/work
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
