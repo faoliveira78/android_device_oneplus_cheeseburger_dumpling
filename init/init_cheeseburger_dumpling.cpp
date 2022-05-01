@@ -56,21 +56,15 @@ void vendor_load_properties()
 	case 53:
 		property_override("ro.product.model", "ONEPLUS A5000");
 		property_override("ro.product.device", "cheeseburger");
-		property_override("ro.build.product", "cheeseburger");
-		property_override("ro.display.series", "OnePlus 5");
 		break;
 	/* OnePlus 5T */
 	case 21:
 		property_override("ro.product.model", "ONEPLUS A5010");
 		property_override("ro.product.device", "dumpling");
-		property_override("ro.build.product", "dumpling");
-		property_override("ro.display.series", "OnePlus 5T");
 		break;
 	/* default to OnePlus 5 */
 	default:
 		property_override("ro.product.model", "ONEPLUS A5000");
 		property_override("ro.product.device", "cheeseburger");
-		property_override("ro.build.product", "cheeseburger");
-		property_override("ro.display.series", "OnePlus 5");
 	}
 }
