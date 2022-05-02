@@ -22,11 +22,10 @@ Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption still not workin
 
 ![OnePlus 5T](https://cdn.opstatics.com/store/20170907/assets/images/support/support-list/model-specs-list/details/5t-black.png "OnePlus 5T in black")
 
-
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/LineageOS/android_kernel_oneplus_msm8998
+https://github.com/xLexip/android_kernel_oneplus_msm8998
 
 ## Compile
 
@@ -51,6 +50,17 @@ Now you can sync your source:
 
 ```
 repo sync
+```
+
+To be able to compile you need to cherry-pick the following commits:
+
+```
+cd ~/android/twrp-12.1/bootable/recovery
+git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/5 && git cherry-pick FETCH_HEAD
+cd ~/android/twrp-12.1/system/core
+git fetch https://github.com/LineageOS/android_system_core.git lineage-19.1
+git cherry-pick 99ef051a7d0d34103babf5f2297dd2747c28570c
+cd ~/android/twrp-12.1
 ```
 
 Finally execute these:
