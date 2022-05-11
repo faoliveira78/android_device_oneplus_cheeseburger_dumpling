@@ -37,7 +37,7 @@ cd ~/android/twrp-12.1
 repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 ```
 
-Then add to a local manifest (if you don't have .repo/local_manifest then make that directory and make a blank file and name it something like twrp.xml):
+Then add to a local manifest (if you don't have .repo/local_manifests then make that directory and make a blank file and name it something like twrp.xml):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
