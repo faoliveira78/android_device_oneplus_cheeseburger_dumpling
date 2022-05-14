@@ -21,7 +21,7 @@ env:
   DT_LINK: https://github.com/faoliveira78/android_device_oneplus_cheeseburger_dumpling -b android-12.1
   DT_PATH: device/oneplus/cheeseburger_dumpling
   TARGET: recoveryimage
-  TZ: America/Brazil
+  TZ: America/Maceio
 
 jobs:
   build:
@@ -53,10 +53,8 @@ jobs:
              repo sync -j4
              cd bootable/recovery
              git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/6 && git cherry-pick FETCH_HEAD
-             cd /home/runner/work/android_device_oneplus_cheeseburger_dumpling/android_device_oneplus_cheeseburger_dumpling/work
-             cd system/core
-             git fetch https://github.com/LineageOS/android_system_core.git lineage-19.1
-             git cherry-pick 99ef051a7d0d34103babf5f2297dd2747c28570c
+             cd /home/runner/work/android_device_oneplus_cheeseburger_dumpling/android_device_oneplus_cheeseburger_dumpling/work/system/core
+             git fetch https://github.com/LineageOS/android_system_core.git lineage-19.1 && git cherry-pick 99ef051a7d0d34103babf5f2297dd2747c28570c
              cd /home/runner/work/android_device_oneplus_cheeseburger_dumpling/android_device_oneplus_cheeseburger_dumpling/work
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
 
