@@ -52,7 +52,7 @@ jobs:
              repo init -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -j4
              cd bootable/recovery
-             git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/11 && git cherry-pick FETCH_HEAD
+             git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/12 && git cherry-pick FETCH_HEAD
              cd /home/runner/work/android_device_oneplus_cheeseburger_dumpling/android_device_oneplus_cheeseburger_dumpling/work/system/vold
              git fetch https://gerrit.twrp.me/android_system_vold refs/changes/88/5488/1 && git cherry-pick FETCH_HEAD
              git fetch https://gerrit.twrp.me/android_system_vold refs/changes/89/5489/1 && git cherry-pick FETCH_HEAD
