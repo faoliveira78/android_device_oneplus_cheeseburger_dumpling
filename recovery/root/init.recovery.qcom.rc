@@ -30,14 +30,25 @@ import /init.recovery.qcom_decrypt.rc
 on early-init
     mkdir /firmware 0771 system system
 
-on fs
+on init
+    setprop prepdecrypt.loglevel 2
+
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-on init
-    setprop prepdecrypt.loglevel 2
-    setprop sys.usb.controller "a800000.dwc3"
-    setprop sys.usb.configfs 1
+    # qseecomd needs /dev/block/bootdevice
+    # vold needs keymaster that needs qseecomd
+    start qseecomd
 
 on boot
     setprop sys.usb.config mtp,adb
+
+# Enable OTG
+    write /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb/otg_switch 1
+
+service qseecomd /system/bin/qseecomd
+    class core
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    writepid /dev/cpuset/system-background/tasks
