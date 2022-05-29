@@ -30,12 +30,13 @@ import /init.recovery.qcom_decrypt.rc
 on early-init
     mkdir /firmware 0771 system system
 
-on init
-    setprop prepdecrypt.loglevel 2
-
-on boot
-    setprop sys.usb.config mtp,adb
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on init
+    setprop prepdecrypt.loglevel 2
+    setprop sys.usb.configfs 1
+
+# Enable OTG
+    write /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb/otg_switch 1

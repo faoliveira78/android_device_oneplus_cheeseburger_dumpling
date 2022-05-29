@@ -17,8 +17,8 @@
 # Release name
 PRODUCT_RELEASE_NAME := cheeseburger_dumpling
 
-$(call inherit-product, build/target/product/core_64_bit.mk)
-$(call inherit-product, build/target/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
@@ -34,7 +34,7 @@ PRODUCT_PACKAGES += \
     tzdata_twrp
 
 # Set by init module based on ro.boot.rf_version argument from bootloader
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.device ro.product.model ro.build.product 
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.device ro.product.model ro.build.product
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
