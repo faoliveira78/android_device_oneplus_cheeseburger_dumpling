@@ -55,8 +55,9 @@ repo sync
 To be able to compile you need to cherry-pick the following commits:
 
 ```
-cd ~/android/twrp-12.1/bootable/recovery
-git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/12 && git cherry-pick FETCH_HEAD
+source build/envsetup.sh
+repopick 5405
+repopick 5540
 cd ~/android/twrp-12.1/system/core
 git fetch https://github.com/LineageOS/android_system_core.git lineage-19.1 && git cherry-pick 99ef051a7d0d34103babf5f2297dd2747c28570c
 cd ~/android/twrp-12.1
