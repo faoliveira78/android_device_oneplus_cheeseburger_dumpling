@@ -58,9 +58,7 @@ To be able to compile you need to cherry-pick the following commits:
 source build/envsetup.sh
 repopick 5405
 repopick 5540
-cd ~/android/twrp-12.1/system/core
-git fetch https://github.com/LineageOS/android_system_core.git lineage-19.1 && git cherry-pick 99ef051a7d0d34103babf5f2297dd2747c28570c
-cd ~/android/twrp-12.1
+repopick 5653
 ```
 
 Finally execute these:
