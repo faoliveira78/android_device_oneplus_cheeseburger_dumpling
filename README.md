@@ -1,6 +1,6 @@
 # android_device_oneplus_cheeseburger_dumpling
 
-Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption still not working on Android 12.x ROMs)
+Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -56,9 +56,7 @@ To be able to compile you need to cherry-pick the following commits:
 
 ```
 source build/envsetup.sh
-repopick 5405
-repopick 5540
-repopick 5653
+repopick 5405 5540 5653
 ```
 
 Finally execute these:

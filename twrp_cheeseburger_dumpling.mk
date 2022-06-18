@@ -1,5 +1,5 @@
 #
-# Copyright 2017 The Android Open Source Project
+# Copyright 2017 - 2022 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,10 +28,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_PACKAGES += \
 	qcom_decrypt \
 	qcom_decrypt_fbe
-
-# tzdata
-PRODUCT_PACKAGES += \
-	tzdata_twrp
 
 # Set by init module based on ro.boot.rf_version argument from bootloader
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.device ro.product.model
