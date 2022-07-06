@@ -26,7 +26,7 @@ Tree for building Unofficial TWRP for OnePlus 5/5T.
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/LineageOS/android_kernel_oneplus_msm8998
+https://github.com/xLexip/android_kernel_oneplus_msm8998
 
 ## Compile
 
