@@ -101,15 +101,23 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libandroidicu \
-    libcap \
-    libion \
-    libxml2
+	android.system.suspend@1.0 \
+	libandroidicu \
+	libhardware_legacy \
+	libcap \
+	libion \
+	libprocinfo \
+	libpuresoftkeymasterdevice \
+	libxml2
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-		$(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-		$(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
+	$(TARGET_OUT_SHARED_LIBRARIES)/android.system.suspend@1.0.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libhardware_legacy.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libprocinfo.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
