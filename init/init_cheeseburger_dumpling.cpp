@@ -35,16 +35,18 @@
 #include <sys/_system_properties.h>
 
 #include "property_service.h"
+#include "vendor_init.h"
 
-void property_override(char const prop[], char const value[], bool add = true)
+using std::string;
+
+void property_override(string prop, string value)
 {
-    auto pi = (prop_info *) __system_property_find(prop);
+    auto pi = (prop_info*) __system_property_find(prop.c_str());
 
-    if (pi != nullptr) {
-        __system_property_update(pi, value, strlen(value));
-    } else if (add) {
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-    }
+    if (pi != nullptr)
+        __system_property_update(pi, value.c_str(), value.size());
+    else
+        __system_property_add(prop.c_str(), prop.size(), value.c_str(), value.size());
 }
 
 void model_property_override(const std::string& name, const std::string& device, const std::string& model,const std::string& fingerprint)

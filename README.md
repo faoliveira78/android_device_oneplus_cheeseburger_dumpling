@@ -1,6 +1,6 @@
 # android_device_oneplus_cheeseburger_dumpling
 
-Tree for building Unofficial TWRP for OnePlus 5/5T.
+Tree for building Unofficial SHRP for OnePlus 5/5T.
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -26,16 +26,16 @@ Tree for building Unofficial TWRP for OnePlus 5/5T.
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/xLexip/android_kernel_oneplus_msm8998
+https://github.com/faoliveira78/android_kernel_oneplus_msm8998
 
 ## Compile
 
-First repo init the TWRP 11.0 tree:
+First repo init the SHRP 11.0 tree:
 
 ```
-mkdir ~/android/twrp-11.0
-cd ~/android/twrp-11.0
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11.0
+mkdir ~/android/SHRP-11.0
+cd ~/android/SHRP-11.0
+repo init -u https://github.com/SHRP/manifest.git -b v3_11.0
 ```
 
 Then add to a local manifest (if you don't have .repo/local_manifests then make that directory and make a blank file and name it something like twrp.xml):
@@ -43,7 +43,7 @@ Then add to a local manifest (if you don't have .repo/local_manifests then make 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
- <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="android-11"/>
+ <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="SHRP-A11"/>
 </manifest>
 ```
 
