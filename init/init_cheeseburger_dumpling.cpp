@@ -47,6 +47,29 @@ void property_override(char const prop[], char const value[], bool add = true)
     }
 }
 
+void model_property_override(const std::string& name, const std::string& device, const std::string& model,const std::string& fingerprint)
+{
+    property_override("ro.product.name", name);
+    property_override("ro.product.odm.name", name);
+    property_override("ro.product.system.name", name);
+    property_override("ro.product.vendor.name", name);
+    property_override("ro.product.system_ext.name", name);
+    property_override("ro.product.device", device);
+    property_override("ro.product.odm.device", device);
+    property_override("ro.product.system.device", device);
+    property_override("ro.product.vendor.device", device);
+    property_override("ro.product.system_ext.device", device);
+    property_override("ro.product.model", model);
+    property_override("ro.product.odm.model", model);
+    property_override("ro.product.system.model", model);
+    property_override("ro.product.vendor.model", model);
+    property_override("ro.product.system_ext.model", model);
+    property_override("ro.odm.build.fingerprint", fingerprint);
+    property_override("ro.system.build.fingerprint", fingerprint);
+    property_override("ro.system_ext.build.fingerprint", fingerprint);
+    property_override("ro.vendor.build.fingerprint", fingerprint);
+}
+
 void vendor_load_properties()
 {
 	int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
@@ -54,23 +77,14 @@ void vendor_load_properties()
 	switch (rf_version) {
 	/* OnePlus 5 */
 	case 53:
-		property_override("ro.product.model", "ONEPLUS A5000");
-		property_override("ro.product.device", "cheeseburger");
-		property_override("ro.build.product", "cheeseburger");
-		property_override("ro.display.series", "OnePlus 5");
+    model_property_override("OnePlus5", "cheeseburger", "OnePlus A5000", "OnePlus/OnePlus5/OnePlus5:10/QKQ1.191014.012/2010292059:user/release-keys");
 		break;
 	/* OnePlus 5T */
 	case 21:
-		property_override("ro.product.model", "ONEPLUS A5010");
-		property_override("ro.product.device", "dumpling");
-		property_override("ro.build.product", "dumpling");
-		property_override("ro.display.series", "OnePlus 5T");
+	  model_property_override("OnePlus5T", "dumpling", "OnePlus A5010", "OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys");
 		break;
 	/* default to OnePlus 5 */
 	default:
-		property_override("ro.product.model", "ONEPLUS A5000");
-		property_override("ro.product.device", "cheeseburger");
-		property_override("ro.build.product", "cheeseburger");
-		property_override("ro.display.series", "OnePlus 5");
+		model_property_override("OnePlus5", "cheeseburger", "OnePlus A5000", "OnePlus/OnePlus5/OnePlus5:10/QKQ1.191014.012/2010292059:user/release-keys");
 	}
 }
