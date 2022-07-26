@@ -85,8 +85,8 @@ void vendor_load_properties()
 	case 21:
 	  model_property_override("OnePlus5T", "dumpling", "OnePlus A5010", "OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys");
 		break;
-	/* default to OnePlus 5 */
+	/* default to OnePlus 5T */
 	default:
-		model_property_override("OnePlus5", "cheeseburger", "OnePlus A5000", "OnePlus/OnePlus5/OnePlus5:10/QKQ1.191014.012/2010292059:user/release-keys");
+		model_property_override("OnePlus5T", "dumpling", "OnePlus A5010", "OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys");
 	}
 }
