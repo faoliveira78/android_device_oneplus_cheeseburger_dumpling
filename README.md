@@ -1,6 +1,6 @@
 # android_device_oneplus_cheeseburger_dumpling
 
-Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
+Tree for building Unofficial SHRP for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -25,16 +25,16 @@ Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/xLexip/android_kernel_oneplus_msm8998
+https://github.com/faoliveira78/android_kernel_oneplus_msm8998
 
 ## Compile
 
-First repo init the TWRP 12.1 tree:
+First repo init the SHRP 12.1 tree:
 
 ```
-mkdir ~/android/twrp-12.1
-cd ~/android/twrp-12.1
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+mkdir ~/android/shrp-12.1
+cd ~/android/shrp-12.1
+repo init -u https://github.com/SHRP/manifest.git -b shrp-12.1
 ```
 
 Then add to a local manifest (if you don't have .repo/local_manifests then make that directory and make a blank file and name it something like twrp.xml):
@@ -42,7 +42,7 @@ Then add to a local manifest (if you don't have .repo/local_manifests then make 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
- <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="android-12.1"/>
+ <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="SHRP-12.1"/>
 </manifest>
 ```
 
@@ -55,8 +55,10 @@ repo sync
 To be able to compile you need to cherry-pick the following commits:
 
 ```
-source build/envsetup.sh
-repopick 5405 5540
+git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/26
+git -C bootable/recovery cherry-pick FETCH_HEAD
+git -C system/vold fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/7
+git -C system/vold cherry-pick FETCH_HEAD
 ```
 
 Finally execute these:

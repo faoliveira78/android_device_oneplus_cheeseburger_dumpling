@@ -139,3 +139,32 @@ TARGET_RECOVERY_DEVICE_MODULES += debuggerd
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
+
+#SHRP Prop
+# NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC).
+# Path of your SHRP Tree
+SHRP_PATH := device/oneplus/cheeseburger_dumpling
+# Maintainer name *
+SHRP_MAINTAINER := faoliveira78
+# Device codename *
+SHRP_DEVICE_CODE := cheeseburger_dumpling
+# Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
+SHRP_REC_TYPE := Treble
+# Recovery Type (It can be A/B or A_only) [Only for About Section] *
+SHRP_DEVICE_TYPE := A_only
+# SHRP Express, enables on-the-fly theme patching (also persistent) + persistent lock [Optional]
+SHRP_EXPRESS := true
+# SHRP Dark mode, use this flag to have dark theme set by default [Optional]
+SHRP_DARK := true
+# put this 0 if device has no EDL mode *
+SHRP_EDL_MODE := 1
+# Put your device's paths from fstab *
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+# Put 0 to disable flashlight *
+SHRP_FLASH := 1
+# Max Brightness of LED [Optional]
+SHRP_FLASH_MAX_BRIGHTNESS := 200
+# Your device's recovery path, dont use blindly
+# No default
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
