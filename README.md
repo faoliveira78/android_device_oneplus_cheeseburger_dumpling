@@ -1,6 +1,6 @@
 # android_device_oneplus_cheeseburger_dumpling
 
-Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
+Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -25,45 +25,4 @@ Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/xLexip/android_kernel_oneplus_msm8998
-
-## Compile
-
-First repo init the TWRP 12.1 tree:
-
-```
-mkdir ~/android/twrp-12.1
-cd ~/android/twrp-12.1
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-```
-
-Then add to a local manifest (if you don't have .repo/local_manifests then make that directory and make a blank file and name it something like twrp.xml):
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
- <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="android-12.1"/>
-</manifest>
-```
-
-Now you can sync your source:
-
-```
-repo sync
-```
-
-To be able to compile you need to cherry-pick the following commits:
-
-```
-source build/envsetup.sh
-repopick 5405 5540
-```
-
-Finally execute these:
-
-```
-. build/envsetup.sh
-export LC_ALL=C
-lunch twrp_cheeseburger_dumpling-eng
-mka recoveryimage
-```
+https://github.com/faoliveira78/android_kernel_oneplus_msm8998

@@ -128,10 +128,6 @@ TW_INCLUDE_RESETPROP := true
 TW_USE_TOOLBOX := true
 TW_HAS_EDL_MODE := true
 
-# Init properties from bootloader version
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_cheeseburger_dumpling
-TARGET_RECOVERY_DEVICE_MODULES := libinit_cheeseburger_dumpling
-
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT:= true
 TARGET_USES_LOGD := true
