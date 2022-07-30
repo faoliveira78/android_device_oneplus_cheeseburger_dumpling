@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := opmsm8998
+PRODUCT_RELEASE_NAME := cheeseburgerdumpling
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -31,11 +31,17 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hardware.keystore=msm8998 \
-	ro.hardware.gatekeeper=msm8998
+	ro.hardware.gatekeeper=msm8998 \
+	ro.vendor.build.security_patch=2127-12-31
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := opmsm8998
-PRODUCT_NAME := twrp_opmsm8998
+PRODUCT_DEVICE := cheeseburgerdumpling
+PRODUCT_NAME := twrp_cheeseburgerdumpling
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := OnePlus A5010
 PRODUCT_MANUFACTURER := OnePlus
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	PRIVATE_BUILD_DESC="OnePlus5T-user 10 QKQ1.191014.012 2010292059 release-keys"
+
+BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys

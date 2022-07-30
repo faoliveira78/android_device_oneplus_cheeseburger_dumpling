@@ -1,27 +1,28 @@
 #!/system/bin/sh
 # This script is needed to automatically set device props.
 
-
 load_dumpling()
 {
-    resetprop "ro.product.model" "OnePlus A5010"
     resetprop "ro.product.name" "OnePlus5T"
-    resetprop "ro.build.product" "OnePlus5T"
+    resetprop "ro.display.series" "OnePlus 5T"
+    resetprop "ro.product.model" "OnePlus A5010"
+    resetprop "ro.build.product" "dumpling"
     resetprop "ro.product.device" "dumpling"
-    resetprop "ro.vendor.product.device" "dumpling"
-}
+    resetprop "ro.product.vendor.device" "dumpling"
+  }
 
-load_cheeseburger()
-{
-    resetprop "ro.product.model" "OnePlus A5000"
+  load_cheeseburger()
+  {
     resetprop "ro.product.name" "OnePlus5"
-    resetprop "ro.build.product" "OnePlus5"
+    resetprop "ro.display.series" "OnePlus 5"
+    resetprop "ro.product.model" "OnePlus A5000"
+    resetprop "ro.build.product" "cheeseburger"
     resetprop "ro.product.device" "cheeseburger"
-    resetprop "ro.vendor.product.device" "cheeseburger"
+    resetprop "ro.product.vendor.device" "cheeseburger"
 }
 
 rf=$(getprop ro.boot.rf_version)
-echo "Running unified/variant script with $rf..." >> /tmp/recovery.log
+echo $rf
 
 case $rf in
     21)
