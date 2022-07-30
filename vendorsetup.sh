@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="dumpling"
+FDEVICE="opmsm8998"
 #set -o xtrace
 
 fox_get_target_device() {
@@ -35,8 +35,8 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-        export TARGET_DEVICE_ALT="cheeseburger"
-        export OF_TARGET_DEVICES="cheeseburger,dumpling"
+        export TARGET_DEVICE_ALT="dumpling,cheeseburger,OnePlus5T,OnePlus5"
+        export OF_TARGET_DEVICES="dumpling,cheeseburger,OnePlus5T,OnePlus5"
         export FOX_VARIANT="A12"
         export OF_USE_GREEN_LED=0
 	      export OF_USE_MAGISKBOOT=1

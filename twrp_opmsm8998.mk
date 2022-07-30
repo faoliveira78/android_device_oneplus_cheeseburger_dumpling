@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := cheeseburger_dumpling
+PRODUCT_RELEASE_NAME := opmsm8998
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -34,8 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hardware.gatekeeper=msm8998
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cheeseburger_dumpling
-PRODUCT_NAME := twrp_cheeseburger_dumpling
+PRODUCT_DEVICE := opmsm8998
+PRODUCT_NAME := twrp_opmsm8998
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := OnePlus A5010
 PRODUCT_MANUFACTURER := OnePlus

@@ -1,4 +1,4 @@
-# android_device_oneplus_cheeseburger_dumpling
+# android_device_oneplus_opmsm8998
 
 Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
 
