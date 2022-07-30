@@ -1,6 +1,5 @@
 # mount point     fstype    device           device2                    flags
 /recovery         emmc      /dev/block/bootdevice/by-name/recovery      flags=backup=1
-/storage          ext4      /data/media/0                  		     		  flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
 /system           ext4      /dev/block/bootdevice/by-name/system        flags=backup=1;wipeingui
 /system_image     emmc      /dev/block/bootdevice/by-name/system        flags=backup=1;flashimg=1
 /vendor           ext4      /dev/block/bootdevice/by-name/vendor        flags=backup=1;wipeingui

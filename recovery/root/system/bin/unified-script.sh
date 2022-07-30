@@ -20,10 +20,10 @@ load_cheeseburger()
     resetprop "ro.vendor.product.device" "cheeseburger"
 }
 
-project=$(getprop ro.boot.rf_version)
-echo $project
+rf=$(getprop ro.boot.rf_version)
+echo "Running unified/variant script with $rf..." >> /tmp/recovery.log
 
-case $project in
+case $rf in
     21)
         load_dumpling
         ;;
