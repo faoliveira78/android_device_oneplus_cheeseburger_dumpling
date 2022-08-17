@@ -15,8 +15,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_cheeseburgerdumpling.mk
+    $(LOCAL_DIR)/twrp_OP5x5T.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_cheeseburgerdumpling-eng \
-    twrp_cheeseburgerdumpling-userdebug
+    twrp_OP5x5T-eng \
+    twrp_OP5x5T-userdebug

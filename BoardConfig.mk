@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-COMMON_PATH := device/oneplus/cheeseburgerdumpling
+COMMON_PATH := device/oneplus/OP5x5T
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true

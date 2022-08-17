@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := cheeseburgerdumpling
+PRODUCT_RELEASE_NAME := OP5x5T
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -35,8 +35,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.build.security_patch=2127-12-31
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cheeseburgerdumpling
-PRODUCT_NAME := twrp_cheeseburgerdumpling
+PRODUCT_DEVICE := OP5x5T
+PRODUCT_NAME := twrp_OP5x5T
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := OnePlus A5010
 PRODUCT_MANUFACTURER := OnePlus
