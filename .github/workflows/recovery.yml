@@ -22,6 +22,8 @@ env:
   DT_PATH: device/oneplus/cheeseburger_dumpling
   ZIP_NAME: SHRP_OP5_T_A12.zip
   TARGET: recoveryimage
+  CHAT_ID: ${{ secrets.TELEGRAM_TO }}
+  BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
 
 jobs:
   build:
@@ -50,12 +52,8 @@ jobs:
              mkdir work
              cd work
              repo init -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
-             repo sync -j4
+             repo sync -j$(nproc --all)
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-             git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/26
-             git -C bootable/recovery cherry-pick FETCH_HEAD
-             git -C system/vold fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/7
-             git -C system/vold cherry-pick FETCH_HEAD
 
        - name: Building SHRP
          run: |
@@ -71,3 +69,5 @@ jobs:
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet $ZIP_NAME
               ./transfer wet recovery.img
+              curl -F chat_id=$CHAT_ID -F document=@recovery.img https://api.telegram.org/bot$BOT_TOKEN/sendDocument >& /dev/null
+              curl -F chat_id=$CHAT_ID -F document=@$ZIP_NAME https://api.telegram.org/bot$BOT_TOKEN/sendDocument >& /dev/null

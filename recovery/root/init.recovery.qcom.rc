@@ -27,6 +27,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service unified-script /system/bin/unified-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on early-init
     mkdir /firmware 0771 system system
 

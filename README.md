@@ -52,15 +52,6 @@ Now you can sync your source:
 repo sync
 ```
 
-To be able to compile you need to cherry-pick the following commits:
-
-```
-git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/26
-git -C bootable/recovery cherry-pick FETCH_HEAD
-git -C system/vold fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/7
-git -C system/vold cherry-pick FETCH_HEAD
-```
-
 Finally execute these:
 
 ```
