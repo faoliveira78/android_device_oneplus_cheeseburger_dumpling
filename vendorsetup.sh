@@ -63,7 +63,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_SPLASH_MAX_SIZE=130
 
 # ensure that /sdcard is bind-unmounted before f2fs data repair or format
-  export OF_UNBIND_SDCARD_F2FS=1]
+  export OF_UNBIND_SDCARD_F2FS=1
 
 # OF_MAINTAINER_AVATAR Setup
   if [ -n "$OF_MAINTAINER_AVATAR" ]; then
