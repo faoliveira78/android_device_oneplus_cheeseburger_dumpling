@@ -38,7 +38,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export TARGET_DEVICE_ALT="dumpling,cheeseburger,OnePlus5T,OnePlus5"
   export OF_TARGET_DEVICES="dumpling,cheeseburger,OnePlus5T,OnePlus5"
   export FOX_VARIANT="A12"
-  export OF_MAINTAINER_AVATAR="misc/faoliveira78.png"
   export OF_USE_GREEN_LED=0
 	export OF_USE_MAGISKBOOT=1
   export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
@@ -53,6 +52,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
   export FOX_ENABLE_APP_MANAGER=1
 
+# Build type && Maintainer flags
+	export FOX_BUILD_TYPE="Unofficial"
+	export FOX_VERSION="R11.1_1"
+	export OF_MAINTAINER="faoliveira78"
+
 # OTA
   export OF_KEEP_DM_VERITY=1
   export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
@@ -65,24 +69,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 # ensure that /sdcard is bind-unmounted before f2fs data repair or format
   export OF_UNBIND_SDCARD_F2FS=1
 
-# OF_MAINTAINER_AVATAR Setup
-  if [ -n "$OF_MAINTAINER_AVATAR" ]; then
-    if [ ! -f "$OF_MAINTAINER_AVATAR" ]; then
-          # some colour codes
-          RED='\033[0;31m'
-          GREEN='\033[0;32m'
-          ORANGE='\033[0;33m'
-          BLUE='\033[0;34m'
-          PURPLE='\033[0;35m'
-          echo -e "${RED}-- File \"$OF_MAINTAINER_AVATAR\" not found  ...${NC}"
-          echo -e "${ORANGE}-- Downloading...${NC}"
-          mkdir -p misc
-          curl https://raw.githubusercontent.com/faoliveira78/avatar/main/faoliveira78.png >> $OF_MAINTAINER_AVATAR
-          echo -e "${BLUE}-- Successfully Downloaded the Avatar Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
-          echo -e "${PURPLE}-- Using A Custom Maintainer Avatar from the Downloaded Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
-          echo -e "${GREEN}-- Done!"
-    fi
-  fi
+# no special MIUI stuff
+	export OF_NO_MIUI_PATCH_WARNING=1
 
 # let's see what are our build VARs
   if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
