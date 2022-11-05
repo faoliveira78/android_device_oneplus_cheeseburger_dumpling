@@ -50,6 +50,16 @@ Now you can sync your source:
 
 ```
 repo sync
+
+```
+For the latest fixes I suggest cherry-picking the following patches
+- Fix for Format data: https://gerrit.twrp.me/c/android_bootable_recovery/+/5917 and https://gerrit.twrp.me/c/android_bootable_recovery/+/6120
+- Fix for Change TWRP folder on decrypted devices: https://gerrit.twrp.me/c/android_bootable_recovery/+/6106:
+
+```
+git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/17/5917/2 && git -C bootable/recovery cherry-pick FETCH_HEAD
+git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/06/6106/1 && git -C bootable/recovery cherry-pick FETCH_HEAD
+git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/20/6120/1 && git -C bootable/recovery cherry-pick FETCH_HEAD
 ```
 
 Finally execute these:
