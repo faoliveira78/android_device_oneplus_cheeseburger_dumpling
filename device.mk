@@ -26,6 +26,10 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
+# fastbootd
+PRODUCT_PACKAGES += \
+	fastbootd
+	
 # qcom standard decryption
 PRODUCT_PACKAGES += \
 	qcom_decrypt \

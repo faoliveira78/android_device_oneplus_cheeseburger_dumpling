@@ -41,6 +41,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
+PRODUCT_ENFORCE_VINTF_MANIFEST:= true
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
@@ -63,6 +67,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom \
 	service_locator.enable=1 \
 	swiotlb=2048 \
 	loop.max_part=7 \
+	androidboot.usbconfigfs=true \
 	android_dt_dir=/non-existent \
 	androidboot.boot_devices=soc/1da4000.ufshc
 BOARD_KERNEL_BASE := 0x00000000
@@ -116,6 +121,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 
 TARGET_RECOVERY_DEVICE_MODULES += \
 	libion \
