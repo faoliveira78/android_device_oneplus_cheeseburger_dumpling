@@ -3,6 +3,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<src>                                                       <mnt_point>               <type>  <mnt_flags and options>                                                                             <fs_mgr_flags>
+/dev/block/bootdevice/by-name/logdump                         /metadata                 ext4    nosuid,nodev,noatime,discard                                                                        wait,check,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/boot                            /boot                     emmc    defaults                                                                                            recoveryonly
 /dev/block/bootdevice/by-name/userdata                        /data                     ext4    nosuid,nodev,noatime,barrier=1,noauto_da_alloc                                                      wait,check,latemount,fileencryption=ice,quota,reservedsize=128M
 /dev/block/bootdevice/by-name/cache                           /cache                    ext4    nosuid,nodev,noatime,barrier=1                                                                      wait,check,formattable
