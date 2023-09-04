@@ -65,10 +65,13 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom \
 	ehci-hcd.park=3 \
 	service_locator.enable=1 \
 	swiotlb=2048 \
-	loop.max_part=7 \
+	loop.max_part=16 \
+	coherent_pool=8M \
 	androidboot.usbconfigfs=true \
 	android_dt_dir=/non-existent \
-	androidboot.boot_devices=soc/1da4000.ufshc
+	androidboot.boot_devices=soc/1da4000.ufshc \
+	lpm_levels.sleep_disabled=1 \
+	kpti=0
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -95,9 +98,9 @@ BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE := 1073741824
 BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE := 3221225472
 BOARD_SUPER_PARTITION_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE) + $(BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE) )
 
-BOARD_SUPER_PARTITION_GROUPS := cheeseburger_dynpart
-BOARD_CHEESEBURGER_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
-BOARD_CHEESEBURGER_DYNPART_PARTITION_LIST := system system_ext product vendor odm
+BOARD_SUPER_PARTITION_GROUPS := cheesedump_dynpart
+BOARD_CHEESEDUMP_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
+BOARD_CHEESEDUMP_DYNPART_PARTITION_LIST := system system_ext product vendor odm
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
