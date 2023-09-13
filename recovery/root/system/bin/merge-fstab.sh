@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 # Dynamic Partitions
-if dd if=/dev/block/by-name/system bs=256k count=1|strings|grep cheeseburger_dynpart > /dev/null; then
+if dd if=/dev/block/by-name/system bs=256k count=1|strings|grep -qE 'cheesedump_dynpart|cheeseburger_dynpart' > /dev/null; then
     echo >> /system/etc/recovery.fstab
     for p in system system_ext product vendor odm; do
         echo "${p} /${p} ext4 rw,barrier=1,discard wait,logical" >> /system/etc/recovery.fstab
