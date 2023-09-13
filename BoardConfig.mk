@@ -66,10 +66,13 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom \
 	ehci-hcd.park=3 \
 	service_locator.enable=1 \
 	swiotlb=2048 \
-	loop.max_part=7 \
+	loop.max_part=16 \
+	coherent_pool=8M \
 	androidboot.usbconfigfs=true \
 	android_dt_dir=/non-existent \
-	androidboot.boot_devices=soc/1da4000.ufshc
+	androidboot.boot_devices=soc/1da4000.ufshc \
+	lpm_levels.sleep_disabled=1 \
+	kpti=0
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
