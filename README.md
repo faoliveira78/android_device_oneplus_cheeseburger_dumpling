@@ -24,4 +24,4 @@ Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on An
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/faoliveira78/android_kernel_oneplus_msm8998
+https://github.com/roberto-sartori-gl/4.14-kernel-oneplus-prebuilt
