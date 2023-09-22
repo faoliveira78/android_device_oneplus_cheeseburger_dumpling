@@ -38,7 +38,12 @@ PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 # fastbootd
 PRODUCT_PACKAGES += \
 	fastbootd
-	
+
+# HIDL
+PRODUCT_PACKAGES += \
+  libhidltransport \
+  libhwbinder
+			
 # qcom standard decryption
 PRODUCT_PACKAGES += \
 	qcom_decrypt \
