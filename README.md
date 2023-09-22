@@ -1,6 +1,6 @@
 # android_device_oneplus_cheeseburger_dumpling
 
-Tree for building official TWRP for OnePlus 5/5T. (Decryption works on Android 12.x and 13 ROMs)
+Tree for building Unofficial TWRP for OnePlus 5/5T. (Decryption works on Android 12.x and 13 ROMs)
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -25,7 +25,7 @@ Tree for building official TWRP for OnePlus 5/5T. (Decryption works on Android 1
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/faoliveira78/android_kernel_oneplus_msm8998
+https://github.com/roberto-sartori-gl/4.14-kernel-oneplus-prebuilt
 
 ## Compile
 
@@ -42,7 +42,7 @@ Then add to a local manifest (if you don't have .repo/local_manifests then make 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
- <project name="TeamWin/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="android-12.1"/>
+ <project name="faoliveira78/android_device_oneplus_cheeseburger_dumpling" path="device/oneplus/cheeseburger_dumpling" remote="github" revision="android-12.1"/>
 </manifest>
 ```
 
