@@ -41,7 +41,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-PRODUCT_ENFORCE_VINTF_MANIFEST:= true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
@@ -153,7 +152,7 @@ TW_INCLUDE_RESETPROP := true
 TW_USE_TOOLBOX := true
 TW_HAS_EDL_MODE := true
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.date.utc;ro.build.date;ro.build.fingerprint=ro.system.build.fingerprint"
+    "ro.build.fingerprint=ro.system.build.fingerprint"
 
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT:= true
