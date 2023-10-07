@@ -1,5 +1,5 @@
 #
-# Copyright 2017 - 2022 The Android Open Source Project
+# Copyright 2017 - 2023 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,11 +39,6 @@ PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
 	fastbootd
 
-# HIDL
-PRODUCT_PACKAGES += \
-  libhidltransport \
-  libhwbinder
-			
 # qcom standard decryption
 PRODUCT_PACKAGES += \
 	qcom_decrypt \
