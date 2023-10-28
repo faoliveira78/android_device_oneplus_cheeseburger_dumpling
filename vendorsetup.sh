@@ -49,13 +49,17 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
-	export OF_QUICK_BACKUP_LIST="/boot;/data;"
+	if ($(ONEPLUS_DYNAMIC), true); then
+			export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
+		else
+			export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
+	fi
 	export FOX_USE_NANO_EDITOR=1
 	export FOX_ENABLE_APP_MANAGER=1
 
 # Build type && Maintainer flags
 	export FOX_BUILD_TYPE="Unofficial"
-	export FOX_VERSION="R11.1_4.14-dyn"
+#	export FOX_VERSION="R11.1_4.14-dyn"
 	export OF_MAINTAINER="faoliveira78"
 
 # OTA

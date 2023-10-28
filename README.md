@@ -1,5 +1,5 @@
 # device_oneplus_cheeseburger_dumpling
-Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on Android 12.x ROMs)
+Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on Android 12+ ROMs)
 
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
@@ -25,3 +25,8 @@ Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on An
 
 Kernel source: (prebuilt)
 https://github.com/roberto-sartori-gl/4.14-kernel-oneplus-prebuilt
+
+If you want to build a recovery with support for dynamic partitions, add the following:
+```
+export ONEPLUS_DYNAMIC="true"
+```
