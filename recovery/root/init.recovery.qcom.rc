@@ -37,10 +37,6 @@ service unified-script /system/bin/unified-script.sh
 on early-init
     mkdir /firmware 0771 system system
 
-on init
-    exec u:r:recovery:s0 -- /system/bin/merge-fstab.sh
-    setprop prepdecrypt.loglevel 2
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice

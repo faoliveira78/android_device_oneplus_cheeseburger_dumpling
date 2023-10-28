@@ -1,4 +1,5 @@
 # mount point     fstype    device           device2                    flags
+
 /boot             emmc      /dev/block/bootdevice/by-name/boot
 /cache            ext4      /dev/block/bootdevice/by-name/cache
 /metadata         ext4      /dev/block/bootdevice/by-name/logdump       flags=display="Metadata";fsflags="discard"
