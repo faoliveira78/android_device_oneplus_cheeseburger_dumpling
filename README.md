@@ -24,7 +24,7 @@ Tree for building Unofficial OrangeFox for OnePlus 5/5T. (Decryption works on An
 ## Kernel
 
 Kernel source: (prebuilt)
-https://github.com/roberto-sartori-gl/4.14-kernel-oneplus-prebuilt
+https://github.com/faoliveira78/4.14-kernel-oneplus-msm8998
 
 If you want to build a recovery with support for dynamic partitions, add the following:
 ```
