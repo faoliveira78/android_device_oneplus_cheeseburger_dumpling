@@ -4,7 +4,7 @@
 /cache            ext4      /dev/block/bootdevice/by-name/cache
 /metadata         ext4      /dev/block/bootdevice/by-name/logdump       flags=display="Metadata";fsflags="discard"
 /recovery         emmc      /dev/block/bootdevice/by-name/recovery      flags=backup=1
-/storage          ext4      /data/media/0                  		     		  flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
+/storage          ext4      /data/media/0                               flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
 /persist          ext4      /dev/block/bootdevice/by-name/persist       flags=display="Persist";backup=1;fsflags="noatime,nosuid,nodev,barrier=1"
 /firmware         vfat      /dev/block/bootdevice/by-name/modem         flags=display="Firmware";mounttodecrypt;fsflags="ro"
 /modem            emmc      /dev/block/bootdevice/by-name/modem         flags=backup=1;display="Modem"
