@@ -16,46 +16,19 @@
       "File": "top-app/cpus"
     },
     {
-      "Name": "MemStats",
-      "Controller": "memory",
-      "File": "memory.stat"
-    },
-    {
       "Name": "MemLimit",
       "Controller": "memory",
-      "File": "memory.limit_in_bytes",
-      "FileV2": "memory.max"
+      "File": "memory.limit_in_bytes"
     },
     {
       "Name": "MemSoftLimit",
       "Controller": "memory",
-      "File": "memory.soft_limit_in_bytes",
-      "FileV2": "memory.low"
+      "File": "memory.soft_limit_in_bytes"
     },
     {
       "Name": "MemSwappiness",
       "Controller": "memory",
       "File": "memory.swappiness"
-    },
-    {
-      "Name": "MemUsage",
-      "Controller": "memory",
-      "File": "memory.usage_in_bytes"
-    },
-    {
-      "Name": "MemAndSwapUsage",
-      "Controller": "memory",
-      "File": "memory.memsw.usage_in_bytes"
-    },
-    {
-      "Name": "MemPressureLevel",
-      "Controller": "memory",
-      "File": "memory.pressure_level"
-    },
-    {
-      "Name": "MemCgroupEventControl",
-      "Controller": "memory",
-      "File": "cgroup.event_control"
     },
     {
       "Name": "UClampMin",
@@ -435,6 +408,7 @@
         }
       ]
     },
+
     {
       "Name": "LowIoPriority",
       "Actions": [
@@ -647,10 +621,6 @@
       "Profiles": [ "ServicePerformance", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
-      "Name": "SCHED_SP_COMPUTE",
-      "Profiles": [ "HighPerformance", "ProcessCapacityHigh", "LowIoPriority", "TimerSlackNormal" ]
-    },
-    {
       "Name": "SCHED_SP_RT_APP",
       "Profiles": [ "RealtimePerformance", "MaxIoPriority", "TimerSlackNormal" ]
     },
@@ -681,14 +651,6 @@
     {
       "Name": "Dex2OatBootComplete",
       "Profiles": [ "Dex2oatPerformance", "LowIoPriority", "TimerSlackHigh" ]
-    },
-    {
-      "Name": "Dex2OatBackground",
-      "Profiles": [ "Dex2OatBootComplete" ]
-    },
-    {
-      "Name": "OtaProfiles",
-      "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
     }
   ]
 }
