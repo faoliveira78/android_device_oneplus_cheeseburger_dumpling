@@ -49,7 +49,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
-	if ($(ONEPLUS_DYNAMIC), true); then
+	if [ "$ONEPLUS_DYNAMIC" = true ]; then
 			export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
 		else
 			export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
