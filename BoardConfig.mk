@@ -69,7 +69,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom \
 	androidboot.usbconfigfs=true \
 	lpm_levels.sleep_disabled=1 \
 	kpti=0
-ifeq ($(ONEPLUS_DYNAMIC), true)
+ifeq ($(FOX_USE_DYNAMIC_PARTITIONS),1)
 BOARD_KERNEL_CMDLINE += android_dt_dir=/non-existent \
 	androidboot.boot_devices=soc/1da4000.ufshc
 endif
@@ -90,7 +90,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 
-ifeq ($(ONEPLUS_DYNAMIC), true)
+ifeq ($(FOX_USE_DYNAMIC_PARTITIONS),1)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 32212254720
 BOARD_FLASH_BLOCK_SIZE := 131072
 
@@ -117,7 +117,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # Workaround for error copying vendor files to recovery ramdisk
-ifeq ($(ONEPLUS_DYNAMIC), true)
+ifeq ($(FOX_USE_DYNAMIC_PARTITIONS),1)
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -137,7 +137,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
-ifeq ($(ONEPLUS_DYNAMIC), true)
+ifeq ($(FOX_USE_DYNAMIC_PARTITIONS),1)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab/recovery-dynamic.fstab
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/fstab/twrp-dynamic.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
 else

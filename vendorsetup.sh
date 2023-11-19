@@ -35,11 +35,10 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
-	export FOX_TARGET_DEVICES="dumpling,cheeseburger,OnePlus5T,OnePlus5"
+	export FOX_TARGET_DEVICES="dumpling,cheeseburger,OnePlus5T,OnePlus5,oneplus5t,oneplus5"
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_USE_SYSTEM_FINGERPRINT="1"
-	export FOX_VARIANT="A12"
 	export OF_USE_GREEN_LED=0
 	export OF_USE_MAGISKBOOT=1
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
@@ -49,9 +48,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
-	if [ "$ONEPLUS_DYNAMIC" = true ]; then
-			export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
+	if [ "$FOX_USE_DYNAMIC_PARTITIONS" = "1" ]; then
+			export OF_QUICK_BACKUP_LIST="/boot;/data;"
+			export FOX_VARIANT="A12_dyn"
 		else
+			export FOX_VARIANT="A12"
 			export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
 	fi
 	export FOX_USE_NANO_EDITOR=1
