@@ -138,11 +138,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 ifeq ($(FOX_USE_DYNAMIC_PARTITIONS),1)
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab/recovery-dynamic.fstab
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/fstab/twrp-dynamic.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/fstab/recovery-dynamic.fstab
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/root/fstab/twrp-dynamic.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
 else
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab/recovery-nondyn.fstab
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/fstab/twrp-nondyn.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/fstab/recovery-nondyn.fstab
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/root/fstab/twrp-nondyn.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
 endif
 TARGET_RECOVERY_DEVICE_MODULES += \
 	libion \
