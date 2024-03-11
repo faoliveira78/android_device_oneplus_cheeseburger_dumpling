@@ -16,8 +16,5 @@ else
     
     echo >> /system/etc/twrp.flags
     cat /fstab/twrp.flags.nondynpart >> /system/etc/twrp.flags
-    echo "/super emmc /dev/block/by-name/system flags=display=\"Super\";backup=1" >> /system/etc/twrp.flags
-    for p in vendor; do
-        echo "/super_${p} emmc /dev/block/by-name/${p} flags=display=\"Super_${p}\";backup=1" >> /system/etc/twrp.flags
-    done
+    echo "/super emmc /dev/block/by-name/system flags=display=\"Super\"" >> /system/etc/twrp.flags
 fi
